@@ -2,7 +2,7 @@ require 'date'
 
 class Package
 
-  attr_accessor :id, :carrier, :shipping_date
+  attr_accessor :id, :carrier, :shipping_date, :origin_country, :destination_country
 
   def initialize(params = {})
     @id = params[:id]

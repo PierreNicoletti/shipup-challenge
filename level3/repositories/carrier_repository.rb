@@ -11,7 +11,7 @@ class CarrierRepository
         code: carrier["code"],
         delivery_promise: carrier["delivery_promise"],
         saturday_deliveries: carrier["saturday_deliveries"],
-        oversea_delay_threshold: carrier["delivery_promise"]
+        oversea_delay_threshold: carrier["oversea_delay_threshold"]
       )
     end
   end

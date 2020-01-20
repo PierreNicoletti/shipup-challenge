@@ -9,13 +9,14 @@ class Carrier
   end
 
   def delivery_date(shipping_date)
-    initial_delivery_date = shipping_date + delivery_promise + 1
-    if initial_delivery_date.wday == 6 && !@saturday_deliveries
-      return initial_delivery_date + 2
+    delivery_date = shipping_date + delivery_promise + 1
+    puts delivery_date
+    if delivery_date.wday == 6 && !@saturday_deliveries
+      delivery_date += 2
     end
-    if initial_delivery_date == 7
-      return initial_delivery_date + 1
+    if delivery_date.wday == 0
+      delivery_date += 1
     end
-    return initial_delivery_date
+    return delivery_date
   end
 end
