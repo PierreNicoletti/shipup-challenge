@@ -7,10 +7,12 @@ class CarrierRepository
     @carriers = []
     serialized_data = File.read(input_file_path)
     JSON.parse(serialized_data)["carriers"].each do |carrier|
-      @carriers << Carrier.new(code: carrier["code"],
+      @carriers << Carrier.new(
+        code: carrier["code"],
         delivery_promise: carrier["delivery_promise"],
-        saturday_deliveries: carrier["saturday_deliveries"]
-        )
+        saturday_deliveries: carrier["saturday_deliveries"],
+        oversea_delay_threshold: carrier["delivery_promise"]
+      )
     end
   end
 
